@@ -24,7 +24,14 @@ void IntersectionPointLines(double k1, double b1, double k2, double b2)
     double y = (-k2 * b1 + k1 * b2) / (k1 - k2);
     double x = (y - b1) / k1;
 
-    Console.WriteLine($"Точка пересечения прямых, заданных уравнениями y = {k1} * x + {b1} , y = {k2} * x + {b2} :({x},{y})");
+    if ((-k1 + k2) == 0)
+    {
+        if (b2 == b1)
+            Console.WriteLine("Прямые совпадают и имеют бесконечное множество точек пересечения");
+        else Console.WriteLine("Прямые параллельны другу друг и не имеют точек пересечения");
+    }
+    else
+        Console.WriteLine($"Точка пересечения прямых, заданных уравнениями y = {k1} * x + {b1} , y = {k2} * x + {b2} :({x},{y})");
 
 
 }
